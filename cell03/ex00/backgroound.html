@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Background</title>
+        <link rel="stylesheet" href="backgroound.css">
+    </head>
+    <script>
+        function ChangeBackgroundColor() {
+            const color = "#" + Math.floor(Math.random() * parseInt("FFFFFF", 16)).toString(16).padStart(6, "0");
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+    <body>
+        <button onclick="ChangeBackgroundColor()">Click Me!</button>
+    </body>
+</html>
