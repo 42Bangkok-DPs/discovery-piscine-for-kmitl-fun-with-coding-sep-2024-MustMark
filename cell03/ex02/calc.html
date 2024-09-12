@@ -20,11 +20,10 @@
     </body>
     <script>
         let time;
-
+        
         function StartTime() {
-            if (time) {
-                clearInterval(time);
-            }
+            clearInterval(time);
+
             time = setInterval(function () {
                 alert('Please, use me...');
             }, 30000);
@@ -39,11 +38,6 @@
             const input1 = document.getElementById("input1").value;
             const input2 = document.getElementById("input2").value;
             const operator = document.getElementById("operator").value;
-            clearInterval(time);
-            
-            intervalId = setInterval(function () {
-                alert('Please, use me...');
-            }, 30000);
 
             if (!CheckNum(input1) || !CheckNum(input2)) {
                 alert("Error :(");
