@@ -27,13 +27,13 @@ $(document).ready(function() {
         const todo = $ft_list.children().map(function() {
             return $(this).text();
         }).get();
-        document.cookie = `todo=${JSON.stringify(todo)}; path=/;`;
+        document.cookie = `todo=${encodeURIComponent(JSON.stringify(todo))}; path=/;`;
     }
 
     function LoadTodo() {
         const cookies = document.cookie.split("; ").find(row => row.startsWith("todo="));
         if (cookies) {
-            const todo = JSON.parse(cookies.split("=")[1]);
+            const todo = JSON.parse((decodeURIComponent(cookies).split("=")[1]));
             $.each(todo.reverse(), function(index, value) {
                 AddTodo(value);
             });
