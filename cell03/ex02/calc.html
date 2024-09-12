@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ballon</title>
+        <link rel="stylesheet" href="backgroound.css">
+    </head>
+    <body style="display: flex; align-items: center; justify-content: center; height: 50vh; background-color: bisque;">
+        <input id="input1" type="text" style="border-radius: 8px; padding: 10px 25px; text-align: center; font-size: 24px;"></input>
+            <select id="operator" style="margin-left: 20px; margin-right: 20px; border-radius: 8px; padding: 10px 25px; text-align: center; font-size: 24px;">
+                <option value="+" style="text-align: center; font-size: 24px;">+</option>
+                <option value="-" style="text-align: center; font-size: 24px;">-</option>
+                <option value="*" style="text-align: center; font-size: 24px;">*</option>
+                <option value="/" style="text-align: center; font-size: 24px;">/</option>
+                <option value="%" style="text-align: center; font-size: 24px;">%</option>
+            </select>
+        <input id="input2" type="text" style="border-radius: 8px; padding: 10px 25px; text-align: center; font-size: 24px;"></input>
+        <button style="margin-left: 20px; background-color: #007bff; border: none; color: white; border-radius: 8px; padding: 10px 25px; text-align: center; cursor: pointer; font-size: 24px;" onclick="Calculate()">Try me!</button>
+    </body>
+    <script>
+        let time;
+
+        function StartTime() {
+            if (time) {
+                clearInterval(time);
+            }
+            time = setInterval(function () {
+                alert('Please, use me...');
+            }, 30000);
+        }
+
+        function CheckNum(value) {
+            const num = Number(value);
+            return Number.isInteger(num) && num >= 0;
+        }
+
+        function Calculate() {
+            const input1 = document.getElementById("input1").value;
+            const input2 = document.getElementById("input2").value;
+            const operator = document.getElementById("operator").value;
+            clearInterval(time);
+            
+            intervalId = setInterval(function () {
+                alert('Please, use me...');
+            }, 30000);
+
+            if (!CheckNum(input1) || !CheckNum(input2)) {
+                alert("Error :(");
+                console.log("Error :(");
+                return;
+            }
+
+            const num1 = Number(input1);
+            const num2 = Number(input2);
+            let result;
+
+            if (operator === "+") {
+                result = num1 + num2;
+            } 
+            else if (operator === "-") {
+                result = num1 - num2;
+            } 
+            else if (operator === "*") {
+                result = num1 * num2;
+            } 
+            else if (operator === "/") {
+                if (num2 === 0) {
+                    alert("It's over 9000!");
+                    console.log("It's over 9000!");
+                    return;
+                }
+                result = num1 / num2;
+            } 
+            else if (operator === "%") {
+                if (num2 === 0) {
+                    alert("It's over 9000!");
+                    console.log("It's over 9000!");
+                    return;
+                }
+                result = num1 % num2;
+            }
+
+            alert(result);
+            console.log(result);
+
+            StartTime();
+        }
+
+        StartTime();
+    </script>
+</html>
