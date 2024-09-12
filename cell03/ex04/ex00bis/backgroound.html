@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Background</title>
+        <link rel="stylesheet" href="backgroound.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <button id="colorButton">Click Me!</button>
+    </body>
+    <script>
+        $(document).ready(function() {
+            $("#colorButton").click(function() {
+                const color = "#" + Math.floor(Math.random() * parseInt("FFFFFF", 16)).toString(16).padStart(6, "0");
+                $("body").css("background-color", color);
+            });
+        });
+    </script>
+</html>
