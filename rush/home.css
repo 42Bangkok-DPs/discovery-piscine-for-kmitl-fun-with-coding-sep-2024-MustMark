@@ -1,0 +1,231 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    font-family: monospace;
+}
+
+.navbar{
+    background-color: rgba(56, 54, 54, 0.762);
+    height: 5vw;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 1vw;
+}
+
+.logo:hover{
+    cursor: pointer;
+    color: darkgrey;
+}
+
+.logoPic{
+    height: 3vw;
+    border-radius: 50%;
+    margin-right: 1vw;
+}
+
+.navbarItem{
+    display: flex;
+    flex-direction: row;
+    padding-right: 1vw;
+}
+
+.navbarItemClick{
+    padding-right: 1vw;
+}
+
+.navbarItemClick:hover{
+    cursor: pointer;
+    color: darkgrey;
+}
+
+.navbarSmall {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+
+    position: relative;
+}
+
+.parallax {
+    vertical-align: middle;
+    color: white;
+    
+    
+    background-color: rgb(0, 0, 0);
+
+    min-height: 50vw;
+    min-width: 100vw;
+
+    background-attachment: fixed;
+    background-repeat:repeat;
+    background-size: 25%;
+    background-position: center;
+}
+
+.homeParallaxImg{
+    background-image: url('https://i.pinimg.com/originals/06/e1/1b/06e11b60b01b1684b5a2639f4588426d.gif'); 
+    
+}
+
+.homeselectImg{
+    background-image: url("https://i.pinimg.com/originals/f3/26/cd/f326cd8b7633e8080e59eb81b7854c54.gif");
+    background-size: 15%;
+}
+
+.transitionImg{
+    min-height: 50vw;
+    background-position: center;
+    background-image: url("https://i.pinimg.com/originals/eb/0f/a7/eb0fa7e72ce89b375e9891545b03a89a.gif");
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    filter: invert(1)
+}
+
+.homeTextContainer{
+    display:flexbox;
+    font-family: "Reddit Mono", monospace;
+    width: 100vw;
+    text-shadow: 5px 5px 20px black;
+}
+
+.homeHeaderText {
+    font-size: 5vw;
+
+    height: 25vw;
+    margin-left: 5vw;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-bottom: 1vh;
+}
+
+.homeDescription {
+    font-size: 1.5vw;
+    margin-left: 5vw;
+    height: 8vw;
+    padding-right: 1vw;
+}
+
+.homeScrollDown {
+    font-size: 1.2vw;
+    text-align: center;
+    height: 15vw;
+    text-shadow: 2px 2px 10px black;
+}
+
+.homeScrollDownText{
+    width: 100vw;
+    padding-bottom: 1vw;
+    padding-top: 2vw;
+    &:hover{
+        background-color: rgba(131, 156, 255, 0.168);
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+}
+
+.selectPortContainer{
+    display: flexbox;
+    font-family: "Reddit Mono", monospace;
+    width: 100vw;
+    height: 10vw;
+    
+}
+
+.selectPortHeaderText{
+    text-align: center;
+    padding-top: 2vw;
+    font-size: 4.5vw;
+    width: 100vw;
+    text-shadow: 5px 5px 10px black;
+    
+}
+
+.portfoliosContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    box-sizing: border-box;
+    height: 5vw;
+    text-shadow: 5px 5px 10px black;
+}
+
+.portfoliocontent{
+    width: 50vw;
+    height: 25vw;
+    box-sizing: border-box;
+    text-align: center;    display: flexbox;
+}
+
+.selectportfolioName{
+    font-size: 2vw;
+    height: 1vw;
+    &:hover{
+        cursor: pointer;
+        color: rgb(121, 191, 253);
+        font-weight: bold;
+        &::before{
+            content: '>\00A0'
+        }
+        &::after{
+            content: '\00A0<'
+        }
+    }
+    
+}
+
+.portButtoncontainer{
+    height: 30vw;
+    width: 50vw;
+    img{
+        border-radius: 5%;
+        background-color: rgb(255, 255, 255);
+        height: 20vw;
+        &:hover{
+            cursor: pointer;
+            border: 1px solid rgb(127, 142, 255);
+            scale: 1.1;
+        }
+    }
+}
+
+.centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-end{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.portDescription{
+    height: 10vw;
+    font-size: 1.2vw;
+    text-shadow: 5px 10px 10px black;
+}
